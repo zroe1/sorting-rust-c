@@ -53,9 +53,7 @@ int main() {
   print_arr(arr, ARRAY_LENGTH);
 
   if (check_sorted(arr, ARRAY_LENGTH))
-    printf("Result of sorting check: True (selection sort worked)\n");
+    printf("Result of sorting check: True (insertion sort worked)\n");
   else
-    printf("Result of sorting check: False (selection sort failed)\n");
-
-  printf("Rand max: %d", RAND_MAX);
+    printf("Result of sorting check: False (insertion sort failed)\n");
 }

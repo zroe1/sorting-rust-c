@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+unsigned int ARRAY_LENGTH = 10;
+
 /* checks if a given array is sorted */
 int check_sorted(unsigned int *nums, unsigned int nums_len) {
   for (unsigned int i = 0; i < nums_len - 1; i++) {
@@ -47,18 +49,18 @@ void selection_sort(unsigned int *nums, unsigned int nums_len) {
 }
 
 int main () {
-  unsigned int *arr = (unsigned int *)malloc(10 * sizeof(int));
+  unsigned int *arr = (unsigned int *)malloc(ARRAY_LENGTH * sizeof(int));
   srand(time(NULL));
 
-  for (unsigned int i = 0; i < 10; i++) {
-    arr[i] = rand();
+  for (unsigned int i = 0; i < ARRAY_LENGTH; i++) {
+    arr[i] = rand() % (65536);
   }
 
-  print_arr(arr, 10);
-  selection_sort(arr, 10);
-  print_arr(arr, 10);
+  print_arr(arr,ARRAY_LENGTH);
+  selection_sort(arr, ARRAY_LENGTH);
+  print_arr(arr, ARRAY_LENGTH);
 
-  if (check_sorted(arr, 10))
+  if (check_sorted(arr, ARRAY_LENGTH))
     printf("Result of sorting check: True (selection sort worked)\n");
   else
     printf("Result of sorting check: False (selection sort failed)\n");
