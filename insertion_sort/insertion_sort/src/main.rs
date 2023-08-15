@@ -1,3 +1,17 @@
+extern crate rand;
+use rand::Rng;
+
+fn check_array_sorted(nums: &Vec<u16>) -> bool {
+    let mut last_num: u16 = 0;
+    for num in nums.iter() {
+        if *num < last_num {
+            return false
+        }
+        last_num = *num;
+    }
+    return true;
+}
+
 fn insertion_sort(nums: &mut Vec<u16>) {
     for i in 1..nums.len() {
         let temp: u16 = nums[i];
@@ -11,28 +25,20 @@ fn insertion_sort(nums: &mut Vec<u16>) {
 }
 
 fn main() {
-    let mut nums: Vec<u16> = vec![1, 2, 3];
-    println!("{:?}", nums);
-    insertion_sort(&mut nums);
-    println!("{:?}\n", nums);
+    let mut rng = rand::thread_rng();
 
-    let mut nums: Vec<u16> = vec![3, 2, 1];
-    println!("{:?}", nums);
-    insertion_sort(&mut nums);
-    println!("{:?}\n", nums);
+    let mut nums: Vec<u16> = vec![0; 10];
+    for num in nums.iter_mut() {
+        *num = rng.gen_range(0..u16::MAX);
+    }
 
-    let mut nums: Vec<u16> = vec![1, 11, 2, 6, 3, 5, 4];
-    println!("{:?}", nums);
+    println!("{:#?}", nums);
     insertion_sort(&mut nums);
-    println!("{:?}\n", nums);
+    println!("{:#?}", nums);
 
-    let mut nums: Vec<u16> = vec![1];
-    println!("{:?}", nums);
-    insertion_sort(&mut nums);
-    println!("{:?}\n", nums);
-
-    let mut nums: Vec<u16> = vec![2, 1];
-    println!("{:?}", nums);
-    insertion_sort(&mut nums);
-    println!("{:?}\n", nums);
+    if check_array_sorted(&nums) {
+        println!("Result of sorting check: True (insertion sort worked)");
+    } else {
+        println!("Result of sorting check: False (insertion sort failed)");
+    }
 }
