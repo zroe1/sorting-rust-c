@@ -5,7 +5,7 @@
 unsigned int ARRAY_LENGTH = 10;
 
 /* checks if a given array is sorted */
-int check_sorted(unsigned int *nums, unsigned int nums_len) {
+int check_sorted(uint16_t *nums, unsigned int nums_len) {
   for (unsigned int i = 0; i < nums_len - 1; i++) {
     if (nums[i] > nums[i + 1]) {
       return 0;
@@ -15,7 +15,7 @@ int check_sorted(unsigned int *nums, unsigned int nums_len) {
 }
 
 /* prints an array in human-readable output to standard output */
-void print_arr(unsigned int *nums, unsigned int nums_len) {
+void print_arr(uint16_t *nums, unsigned int nums_len) {
   printf("[\n");
   for (unsigned int i = 0; i < nums_len; i++) {
     printf("  %d", nums[i]);
@@ -28,10 +28,10 @@ void print_arr(unsigned int *nums, unsigned int nums_len) {
 }
 
 /* insertion sort on an array of unsigned ints */
-void insertion_sort(unsigned int *nums, unsigned int len_nums) {
+void insertion_sort(uint16_t *nums, unsigned int len_nums) {
   for (unsigned int i = 1; i < len_nums; i++) {
     unsigned int current_idx = i;
-    unsigned int temp = nums[i];
+    uint16_t temp = nums[i];
     while (current_idx > 0 && temp < nums[current_idx - 1]) {
       nums[current_idx] = nums[current_idx - 1];
       current_idx--;
@@ -41,7 +41,7 @@ void insertion_sort(unsigned int *nums, unsigned int len_nums) {
 }
 
 int main() {
-  unsigned int *arr = (unsigned int *)malloc(ARRAY_LENGTH * sizeof(int));
+  uint16_t *arr = (uint16_t *)malloc(ARRAY_LENGTH * sizeof(uint16_t));
   srand(time(NULL));
 
   for (unsigned int i = 0; i < ARRAY_LENGTH; i++) {

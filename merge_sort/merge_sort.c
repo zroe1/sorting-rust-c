@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdint.h>
 
 unsigned int ARRAY_LENGTH = 10;
 
 /* checks if a given array is sorted */
-int check_sorted(unsigned int *nums, unsigned int nums_len) {
+int check_sorted(uint16_t *nums, unsigned int nums_len) {
   for (unsigned int i = 0; i < nums_len - 1; i++) {
     if (nums[i] > nums[i + 1]) {
       return 0;
@@ -15,7 +16,7 @@ int check_sorted(unsigned int *nums, unsigned int nums_len) {
 }
 
 /* prints an array in human-readable output to standard output */
-void print_arr(unsigned int *nums, unsigned int nums_len) {
+void print_arr(uint16_t *nums, unsigned int nums_len) {
   printf("[\n");
   for (unsigned int i = 0; i < nums_len; i++) {
     printf("  %d", nums[i]);
@@ -29,8 +30,8 @@ void print_arr(unsigned int *nums, unsigned int nums_len) {
 
 /* Merges two sorted arrays; assumes final arr was malloced with > l1 + l2 
 int pointers */
-void merge(unsigned int *arr1, int l1, unsigned int *arr2, int l2,  
-           unsigned int *final_arr) {
+void merge(uint16_t *arr1, unsigned int l1, uint16_t *arr2, unsigned int l2,  
+           uint16_t *final_arr) {
   int pointer1 = 0;
   int pointer2 = 0;
   unsigned int rv_pointer = 0;
@@ -49,14 +50,14 @@ void merge(unsigned int *arr1, int l1, unsigned int *arr2, int l2,
     final_arr[rv_pointer++] = arr2[pointer2++];
 }
 
-void merge_sort(unsigned int *arr, unsigned int arr_len) {
+void merge_sort(uint16_t *arr, unsigned int arr_len) {
   if (arr_len <= 1)
     return;
 
   unsigned int left_len = arr_len / 2;
   unsigned int right_len = arr_len - left_len;
-  unsigned int *left = (unsigned int *)malloc(sizeof(unsigned int) * left_len);
-  unsigned int *right = (unsigned int *)malloc(sizeof(unsigned int) * right_len);
+  uint16_t *left = (uint16_t *)malloc(sizeof(uint16_t) * left_len);
+  uint16_t *right = (uint16_t *)malloc(sizeof(uint16_t) * right_len);
 
   unsigned int left_idx = 0;
   unsigned int right_idx = 0;
@@ -67,8 +68,6 @@ void merge_sort(unsigned int *arr, unsigned int arr_len) {
       right[right_idx++] = arr[i];
     }
   }
-  // printf("len_len: %d\n", left_len);
-  // printf("left 0: %d, right 0: %d\n", left[0], right[0]);
 
   merge_sort(left, left_len);
   merge_sort(right, right_len);
@@ -78,7 +77,7 @@ void merge_sort(unsigned int *arr, unsigned int arr_len) {
 }
 
 int main() {
-  unsigned int *arr = (unsigned int *)malloc(ARRAY_LENGTH * sizeof(int));
+  uint16_t *arr = (uint16_t *)malloc(ARRAY_LENGTH * sizeof(uint16_t));
   srand(time(NULL));
 
   for (unsigned int i = 0; i < ARRAY_LENGTH; i++) {
