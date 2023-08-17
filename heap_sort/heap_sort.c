@@ -40,43 +40,36 @@ void swap(uint16_t *nums, unsigned int idx1, unsigned int idx2) {
   nums[idx2] = temp;
 }
 
-/* returns the left element at a given index */
-unsigned int find_left_child(unsigned int idx) {
-  return (idx + 1) * 2 - 1;
-}
-
-/* returns the right element at a given index */
-unsigned int find_right_child(unsigned int idx) {
-  return (idx + 1) * 2;
-}
-
 /* "maxheapify": assumes both children are max heaps and swaps top
 node down if necessary to turn that node also into a max heap */
 void swap_down(uint16_t *arr, unsigned int idx) {
-  unsigned int left = find_left_child(idx);
-  unsigned int right = find_right_child(idx);
+  // handles if there are both left and right children
+  if ((idx + 1) * 2 < heap_limit) {
+    unsigned int left_idx = (idx + 1) * 2 - 1;
+    unsigned int right_idx = (idx + 1) * 2;
 
-  if (left < heap_limit && right < heap_limit) {
-    if (arr[left] > arr[right]) {
-      if (arr[left] > arr[idx]) {    
-        swap(arr, left, idx);
-        swap_down(arr, left);
+    if (arr[left_idx] > arr[right_idx]) {
+      if (arr[left_idx] > arr[idx]) {
+        swap(arr, left_idx, idx);
+        swap_down(arr, left_idx);
       }
     } else {
-      if (arr[right] > arr[idx]) {    
-        swap(arr, right, idx);
-        swap_down(arr, right);
+      if (arr[right_idx] > arr[idx]) {
+        swap(arr, right_idx, idx);
+        swap_down(arr, right_idx);
       }
     }
-    return;
-  }
+  // handles if there are only left children
+  } else if ((idx + 1) * 2 - 1 < heap_limit) {
+    unsigned int left_idx = (idx + 1) * 2 - 1;
 
-  // if here, either left = heap limit - 1 or left and right < heap_limit
-  if (left < heap_limit) {
-    if (arr[left] > arr[idx]) {    
-      swap(arr, left, idx);
-      swap_down(arr, left);
+    if (arr[left_idx] > arr[idx]) {
+      swap(arr, left_idx, idx);
+      swap_down(arr, left_idx);
     }
+  // handles if there are no children
+  } else {
+    return;
   }
 }
 
