@@ -6,6 +6,10 @@ unsigned int ARRAY_LENGTH = 10;
 
 /* checks if a given array is sorted */
 int check_sorted(uint16_t *nums, unsigned int nums_len) {
+  // check to prevent unsigned int overflow
+  if (nums_len == 0)
+    return 1;
+
   for (unsigned int i = 0; i < nums_len - 1; i++) {
     if (nums[i] > nums[i + 1]) {
       return 0;
