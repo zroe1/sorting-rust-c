@@ -18,3 +18,6 @@ a.out
 
 # Ignore swap files
 *.swp
+
+# Ignore .DS_Store files
+**/.DS_Store
