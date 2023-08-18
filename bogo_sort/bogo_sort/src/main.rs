@@ -43,7 +43,7 @@ fn bogo_sort(nums: &mut Vec<u16>) {
 fn main() {
     let mut rng = rand::thread_rng();
     println!("n,t");
-    for i in 0..10 {
+    for i in 0..12 {
         let mut nums: Vec<u16> = vec![0; i];
         for num in nums.iter_mut() {
             *num = rng.gen_range(0..u16::MAX);
