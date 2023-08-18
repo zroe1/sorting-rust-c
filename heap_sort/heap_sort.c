@@ -42,7 +42,7 @@ void swap(uint16_t *nums, unsigned int idx1, unsigned int idx2) {
 
 /* "maxheapify": assumes both children are max heaps and swaps top
 node down if necessary to turn that node also into a max heap */
-void swap_down(uint16_t *arr, unsigned int idx) {
+void maxheapify(uint16_t *arr, unsigned int idx) {
   // handles if there are both left and right children
   if ((idx + 1) * 2 < heap_limit) {
     unsigned int left_idx = (idx + 1) * 2 - 1;
@@ -51,12 +51,12 @@ void swap_down(uint16_t *arr, unsigned int idx) {
     if (arr[left_idx] > arr[right_idx]) {
       if (arr[left_idx] > arr[idx]) {
         swap(arr, left_idx, idx);
-        swap_down(arr, left_idx);
+        maxheapify(arr, left_idx);
       }
     } else {
       if (arr[right_idx] > arr[idx]) {
         swap(arr, right_idx, idx);
-        swap_down(arr, right_idx);
+        maxheapify(arr, right_idx);
       }
     }
   // handles if there are only left children
@@ -65,7 +65,7 @@ void swap_down(uint16_t *arr, unsigned int idx) {
 
     if (arr[left_idx] > arr[idx]) {
       swap(arr, left_idx, idx);
-      swap_down(arr, left_idx);
+      maxheapify(arr, left_idx);
     }
   // handles if there are no children
   } else {
@@ -76,7 +76,7 @@ void swap_down(uint16_t *arr, unsigned int idx) {
 /* turns an array into a maxheap */
 void build_heap(uint16_t *arr, unsigned int arr_len) {
   for (int i = arr_len / 2; i >= 0; i--) {
-    swap_down(arr, i);
+    maxheapify(arr, i);
   }
 }
 
@@ -89,7 +89,7 @@ void heap_sort(uint16_t *arr, unsigned int arr_len) {
   while (heap_limit >= 2) {
     swap(arr, 0, heap_limit - 1);
     heap_limit--;
-    swap_down(arr, 0);
+    maxheapify(arr, 0);
   }
 }
 
