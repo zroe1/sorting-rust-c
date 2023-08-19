@@ -1,5 +1,7 @@
 # Comparing Sorting Algorithms in Rust and c
 
+I created this repository to experiment with different sorting algorithms and compare the preformance of c and Rust. To my surprise, Rust has significantly better preformance than c in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than c, it shows how despite being new, the Rust language is extremely powerful and useful.
+
 ## Bogo sort
 <b>Description: </b> Bogo sort shuffles an array until it finds the right solution. My implementation of bogo sort randomly shuffles an array (there is also a deterministic solution) so it basically just guesses until it guesses right. For an 11 length array, my Rust solution takes 12 seconds to guess the right answer. I couldn't test larger arrays becuase it would take too long to run. So, yeah. It's pretty slow. We can do better.  
 <b>Time complexity: </b> I don't even want to know.  
