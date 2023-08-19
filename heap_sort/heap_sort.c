@@ -3,7 +3,6 @@
 #include <time.h>
 #include <stdint.h>
 
-unsigned int ARRAY_LENGTH = 10;
 unsigned int heap_limit = 10;
 
 /* checks if a given array is sorted */
@@ -94,21 +93,23 @@ void heap_sort(uint16_t *arr, unsigned int arr_len) {
 }
 
 int main() {
-  uint16_t *arr = (uint16_t *)malloc(ARRAY_LENGTH * sizeof(uint16_t));
-  srand(time(NULL));
+  printf("n,t\n");
+  for (unsigned int i = 0; i < 300; i++) {
+    unsigned int ARRAY_LENGTH = i * 100;
+    heap_limit = ARRAY_LENGTH;
+    uint16_t *arr = (uint16_t *)malloc(ARRAY_LENGTH * sizeof(uint16_t));
+    srand(time(NULL));
 
-  for (unsigned int i = 0; i < ARRAY_LENGTH; i++) {
-    arr[i] = rand() % (65536);
+    for (unsigned int j = 0; j < ARRAY_LENGTH; j ++) {
+      arr[j] = rand() % (65536);
+    }
+
+    clock_t start = clock();
+    heap_sort(arr, ARRAY_LENGTH);
+    clock_t end = clock();
+    double time = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+    printf("%d,%f\n", ARRAY_LENGTH, time);
   }
-
-  print_arr(arr,ARRAY_LENGTH);
-  heap_sort(arr, ARRAY_LENGTH);
-  print_arr(arr, ARRAY_LENGTH);
-
-  
-  if (check_sorted(arr, ARRAY_LENGTH))
-    printf("Result of sorting check: True (heap sort worked)\n");
-  else
-    printf("Result of sorting check: False (heap sort failed)\n");
 }
 
