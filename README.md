@@ -2,12 +2,11 @@
 
 I created this repository to experiment with different sorting algorithms and compare the preformance of c and Rust. To my surprise, Rust has significantly better preformance than c in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than c, it shows how despite being new, the Rust language is extremely powerful and useful.
 
-## Bogo sort
-<b>Description: </b> Bogo sort shuffles an array until it finds the right solution. My implementation of bogo sort randomly shuffles an array (there is also a deterministic solution) so it basically just guesses until it guesses right. For an 11 length array, my Rust solution takes 12 seconds to guess the right answer. I couldn't test larger arrays becuase it would take too long to run. So, yeah. It's pretty slow. We can do better.  
-<b>Time complexity: </b> I don't even want to know.  
-<b>Space complexity: </b> O(1)  
-<img width="603" alt="Screenshot 2023-08-18 at 8 32 40 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/91945f06-b66a-40d5-9a73-6decdc56844e">
+## How I tested preformance:
+All algorithms were tested on arrays filled randomly with 16 bit unsigned integers of varying length. The largest arrays I tested were about 30,000 numbers long which was enough to get a good idea of how the algorithm preforms on larger inputs. However, this wasn't always good enough to get the full picture. If you take a look at the graphs below, you will notice that some O(n<sup>2</sup>) algorithms beat O(nlog(n)) algorithms even on larger inputs. This is only because the inputs aren't large enough. As arrays get bigger, heap sort and merge sort will consistently outpreform O(n<sup>2</sup>) algorithms.
 
+### Note about NULL pointers and freeing memory in c:
+I don't check for NULL pointers after memory allocation in this repository although if you use any of this code as a part of larger product, I would recomend it. I also don't often free memory correctly but this will be fixed soon.
 
 ## Bubble sort
 <b>Description: </b> Bubble interates through an array and swaps larger elements up twoards the top of the array. This process is repeated untill the array is sorted. Bubble sort is often chosen for it's simplicity an conciseness.  
@@ -38,6 +37,13 @@ I created this repository to experiment with different sorting algorithms and co
 <b>Time complexity: </b> O(nlog(n))  
 <b>Space complexity: </b> O(1)  
 <img width="672" alt="Screenshot 2023-08-19 at 3 46 52 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/3181b4ef-56eb-4367-b951-6cdd8d4225cf">
+
+## Bogo sort (stupid sort)
+<b>Description: </b> Bogo sort shuffles an array until it finds the right solution. My implementation of bogo sort randomly shuffles an array (there is also a deterministic solution) so it basically just guesses until it guesses right. For an 11 length array, my Rust solution takes 12 seconds to guess the right answer. I couldn't test larger arrays becuase it would take too long to run. So, yeah. It's pretty slow. We can do better.  
+<b>Time complexity: </b> I don't even want to know.  
+<b>Space complexity: </b> O(1)  
+<img width="603" alt="Screenshot 2023-08-18 at 8 32 40 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/91945f06-b66a-40d5-9a73-6decdc56844e">
+
 
 
 
