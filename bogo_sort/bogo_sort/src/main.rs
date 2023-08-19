@@ -1,6 +1,6 @@
 extern crate rand;
 use rand::Rng;
-use std::time::{Instant};
+use std::time::Instant;
 
 fn check_array_sorted(nums: &Vec<u16>) -> bool {
     let mut last_num: u16 = 0;
