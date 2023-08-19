@@ -11,4 +11,4 @@
 <b>Description: </b> Bubble interates through an array and swaps larger elements up twoards the top of the array. This process is repeated untill the array is sorted. Bubble sort is often chosen for it's simplicity an conciseness.  
 <b>Time complexity: </b> O(n<sup>2</sup>)  
 <b>Space complexity: </b> O(n)  
-<img width="603" alt="Screenshot 2023-08-18 at 9 02 28 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/77d34fda-0090-47bc-bd35-d17f09ffab3d">
+<img width="606" alt="Screenshot 2023-08-18 at 9 05 54 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/bc18a864-81c1-4249-b465-04040daece2c">
