@@ -12,3 +12,10 @@
 <b>Time complexity: </b> O(n<sup>2</sup>)  
 <b>Space complexity: </b> O(n)  
 <img width="606" alt="Screenshot 2023-08-18 at 9 05 54 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/bc18a864-81c1-4249-b465-04040daece2c">
+
+## Insertion sort
+<b>Description: </b> Insertion sort builds up a sorted array by inserting each element into its correct position relative to the previously sorted elements. I like insertion sort because it is similar to how I would approach sort in the physical world. It also seems to be faster than bubble sort in my implementations.  
+<b>Time complexity: </b> O(n<sup>2</sup>)  
+<b>Space complexity: </b> O(n)  
+<img width="566" alt="Screenshot 2023-08-18 at 10 59 11 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/94252caf-fd7b-499b-8117-f326813b21f7">
+
