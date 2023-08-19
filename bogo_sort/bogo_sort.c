@@ -3,8 +3,6 @@
 #include <time.h>
 #include <stdint.h>
 
-// unsigned int ARRAY_LENGTH = 10;
-
 /* checks if a given array is sorted */
 int check_sorted(uint16_t *nums, unsigned int nums_len) {
   // check to prevent unsigned int overflow
@@ -46,7 +44,6 @@ void shuffle(uint16_t *arr, unsigned int arr_len) {
     idx2 = rand() % (arr_len);
     swap(arr, idx1, idx2);
   }
-  //  rand() % (65536);  
 }
 
 void bogo_sort(uint16_t *arr, unsigned int arr_len) {
@@ -72,7 +69,6 @@ int main() {
     double time = ((double)(end - start)) / CLOCKS_PER_SEC;
 
     printf("%d,%f\n", i, time);
-    // print_arr(arr, ARRAY_LENGTH);
   }
 }
 

@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-unsigned int ARRAY_LENGTH = 10;
-
 /* checks if a given array is sorted */
 int check_sorted(uint16_t *nums, unsigned int nums_len) {
   // check to prevent unsigned int overflow
