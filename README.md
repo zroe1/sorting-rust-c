@@ -31,5 +31,12 @@
 <b>Space complexity: </b> O(n)  
 <img width="598" alt="Screenshot 2023-08-19 at 11 52 04 AM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/a073c198-aa51-4960-8daa-81f7bde7c0f0">
 
+## Heap sort
+<b>Description: </b> Heap sort turns an array into a max heap and then removes the max item one by one to create a sorted array. Unlike merge sort, the algorithm works in constant space.  
+<b>Time complexity: </b> O(nlog(n))  
+<b>Space complexity: </b> O(1)  
+<img width="672" alt="Screenshot 2023-08-19 at 3 46 52 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/3181b4ef-56eb-4367-b951-6cdd8d4225cf">
+
+
 
 
