@@ -11,11 +11,17 @@
 <b>Description: </b> Bubble interates through an array and swaps larger elements up twoards the top of the array. This process is repeated untill the array is sorted. Bubble sort is often chosen for it's simplicity an conciseness.  
 <b>Time complexity: </b> O(n<sup>2</sup>)  
 <b>Space complexity: </b> O(n)  
-<img width="606" alt="Screenshot 2023-08-18 at 9 05 54 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/bc18a864-81c1-4249-b465-04040daece2c">
+<img width="603" alt="Screenshot 2023-08-18 at 9 05 54 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/bc18a864-81c1-4249-b465-04040daece2c">
 
 ## Insertion sort
 <b>Description: </b> Insertion sort builds up a sorted array by inserting each element into its correct position relative to the previously sorted elements. I like insertion sort because it is similar to how I would approach sort in the physical world. It also seems to be faster than bubble sort in my implementations.  
 <b>Time complexity: </b> O(n<sup>2</sup>)  
 <b>Space complexity: </b> O(n)  
-<img width="566" alt="Screenshot 2023-08-18 at 10 59 11 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/94252caf-fd7b-499b-8117-f326813b21f7">
+<img width="603" alt="Screenshot 2023-08-18 at 10 59 11 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/94252caf-fd7b-499b-8117-f326813b21f7">
+
+## Selection sort
+<b>Description: </b> Insertion sort selects the smallest number in the array, stores it in the correct possition and then repeats (finding the second smallest number, then the third, then the fourth, ect.) until the array is sorted. I find selection sort to be the easiest sorting algorithm to wrap your head arround.  
+<b>Time complexity: </b> O(n<sup>2</sup>)  
+<b>Space complexity: </b> O(n)  
+<img width="603" alt="Screenshot 2023-08-19 at 11 32 22 AM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/bbbc763e-9dfa-4532-acaf-4ba75605abad">
 
