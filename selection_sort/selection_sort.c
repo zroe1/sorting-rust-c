@@ -68,5 +68,8 @@ int main () {
     double time = ((double)(end - start)) / CLOCKS_PER_SEC;
 
     printf("%d,%f\n", ARRAY_LENGTH, time);
+
+    // frees the current array after sorted and time to sort was recoreded
+    free(arr);
   }
 }
