@@ -39,6 +39,7 @@ All algorithms were tested on arrays filled randomly with 16 bit unsigned intege
 
 ## Count sort
 <b>Description: </b> Count sort works by allocating an array with length (input max - input min + 1) and initializing all elements to 0. It then counts how many of each element is in the original array, storing the counts in the allocated array. By doing this, the algorithm can reproduce a sorted version of the array based on the counts it collected. As you can see below, it is faster than merge sort and heap sort on the arrays of unsigned 16 bit integers I tested in this repository.  
+<b>Note: </b>  My version of count sort is designed it work on unsigned 16 bit integers. It would have to be modified to work on larger or negative data types.  
 <b>Time complexity: </b> O(n + k) (k being input max - input min + 1)  
 <b>Space complexity: </b> O(k) (there is also a common O(n + k) space complexity version of this algorithm)  
 <img width="603" alt="Screenshot 2023-08-20 at 1 26 36 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/dbc348ae-6d38-4c88-8250-97eed5f71f84">
