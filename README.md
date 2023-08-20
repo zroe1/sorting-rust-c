@@ -1,11 +1,11 @@
 # Comparing Sorting Algorithms in Rust and c
 
-I created this repository to experiment with different sorting algorithms and compare the preformance of c and Rust. To my surprise, Rust has significantly better preformance than c in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than c, it shows how despite being new, the Rust language is extremely powerful and useful.
+I created this repository to experiment with different sorting algorithms and compare the preformance of C and Rust. To my surprise, Rust has significantly better preformance than C in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than C, it shows how despite being new, the Rust language is extremely powerful and useful.
 
 ## How I tested preformance:
 All algorithms were tested on arrays filled randomly with 16 bit unsigned integers of varying length. The largest arrays I tested were about 30,000 numbers long which was enough to get a good idea of how the algorithm preforms on larger inputs.
 
-<b>Note about NULL pointers in c code: </b>I don't check for NULL pointers after memory allocation in this repository although if you use any of this code as a part of larger product, I would recomend it.
+<b>Note about NULL pointers in C code: </b>I don't check for NULL pointers after memory allocation in this repository although if you use any of this code as a part of larger product, I would recomend it.
 
 ## Bubble sort
 <b>Description: </b> Bubble interates through an array and swaps larger elements up twoards the top of the array. This process is repeated untill the array is sorted. Bubble sort is often chosen for it's simplicity an conciseness.  
