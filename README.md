@@ -1,4 +1,4 @@
-# Comparing Sorting Algorithms in Rust and c
+# Comparing Sorting Algorithms in Rust and C
 
 I created this repository to experiment with different sorting algorithms and compare the preformance of C and Rust. To my surprise, Rust has significantly better preformance than C in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than C, it shows how despite being new, the Rust language is extremely powerful and useful.
 
