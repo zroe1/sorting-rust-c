@@ -1,4 +1,4 @@
-# Comparing Sorting Algorithms in Rust and c
+# Comparing Sorting Algorithms in Rust and C
 
 I created this repository to experiment with different sorting algorithms and compare the preformance of C and Rust. To my surprise, Rust has significantly better preformance than C in most of the sorting algorithms I tested (big win for Rustaceans🦀). Although this doesn't mean that Rust is univerally faster than C, it shows how despite being new, the Rust language is extremely powerful and useful.
 
@@ -37,11 +37,21 @@ All algorithms were tested on arrays filled randomly with 16 bit unsigned intege
 <b>Space complexity: </b> O(1)  
 <img width="603" alt="Screenshot 2023-08-19 at 3 46 52 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/3181b4ef-56eb-4367-b951-6cdd8d4225cf">
 
+## Count sort
+<b>Description: </b> Count sort works by allocating an array with length (input max - input min + 1) and initializing all elements to 0. It then counts how many of each element is in the original array, storing the counts in the allocated array. By doing this, the algorithm can reproduce a sorted version of the array based on the counts it collected. As you can see below, it is faster than merge sort and heap sort on the arrays of unsigned 16 bit integers I tested in this repository.  
+<b>Note: </b>  My version of count sort is designed it work on unsigned 16 bit integers. It would have to be modified to work on larger or negative data types.  
+<b>Time complexity: </b> O(n + k) (k being input max - input min + 1)  
+<b>Space complexity: </b> O(k) (there is also a common O(n + k) space complexity version of this algorithm)  
+<img width="603" alt="Screenshot 2023-08-20 at 1 26 36 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/dbc348ae-6d38-4c88-8250-97eed5f71f84">
+
 ## Bogo sort (stupid sort)
 <b>Description: </b> Bogo sort shuffles an array until it finds the right solution. My implementation of bogo sort randomly shuffles an array (there is also a deterministic solution) so it basically just guesses until it guesses right. For an 11 length array, my Rust solution takes 12 seconds to guess the right answer. I couldn't test larger arrays becuase it would take too long to run. So, yeah. It's pretty slow. We can do better.  
 <b>Time complexity: </b> I don't even want to know.  
 <b>Space complexity: </b> O(1)  
 <img width="603" alt="Screenshot 2023-08-18 at 8 32 40 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/91945f06-b66a-40d5-9a73-6decdc56844e">
+
+
+
 
 
 
