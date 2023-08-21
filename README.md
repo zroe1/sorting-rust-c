@@ -44,11 +44,19 @@ All algorithms were tested on arrays filled randomly with 16 bit unsigned intege
 <b>Space complexity: </b> O(k) (there is also a common O(n + k) space complexity version of this algorithm)  
 <img width="603" alt="Screenshot 2023-08-20 at 1 26 36 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/dbc348ae-6d38-4c88-8250-97eed5f71f84">
 
+## Radix sort
+<b>Description: </b> Radix sort uses count sort (slight variation to the count sort described above) to sort the numbers by least significant digit up to most. Radix sort is helpful on arrays with larger integers or strings because it doesn't require allocation of a data structure that is the size of the range of the input.  
+<b>Time complexity: </b> O(n)  
+<b>Space complexity: </b> O(n)  
+<img width="699" alt="Screenshot 2023-08-21 at 12 13 48 AM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/065c578a-d47b-41cc-9d95-ed0f0885a9e1">
+
+
 ## Bogo sort (stupid sort)
 <b>Description: </b> Bogo sort shuffles an array until it finds the right solution. My implementation of bogo sort randomly shuffles an array (there is also a deterministic solution) so it basically just guesses until it guesses right. For an 11 length array, my Rust solution takes 12 seconds to guess the right answer. I couldn't test larger arrays becuase it would take too long to run. So, yeah. It's pretty slow. We can do better.  
 <b>Time complexity: </b> I don't even want to know.  
 <b>Space complexity: </b> O(1)  
 <img width="603" alt="Screenshot 2023-08-18 at 8 32 40 PM" src="https://github.com/zroe1/sorting-rust-c/assets/114773939/91945f06-b66a-40d5-9a73-6decdc56844e">
+
 
 
 
